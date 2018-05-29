@@ -38,7 +38,7 @@ function! codefmt#dartfmt#GetFormatter() abort
   " @flag(dartfmt_executable}, only targetting the range from {startline} to
   " {endline}
   function l:formatter.FormatRange(startline, endline) abort
-    let l:cmd = [ s:plugin.Flag('dartfmt_executable') ]
+    let l:cmd = [ s:plugin.Flag('dartfmt_executable'), '-l', '100' ]
     try
       " dartfmt does not support range formatting yet:
       " https://github.com/dart-lang/dart_style/issues/92
